@@ -1,66 +1,41 @@
-## Foundry
+## Crypto Trading Foundry
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+Experimental AMM components built with Foundry. Current focus is a minimal token pair contract with tests; upcoming work includes an `AMMRouter.sol` `PairFactory.sol`,and additional pool logic.
 
-Foundry consists of:
+### Project status
+- ✅ Token pair interface and implementation (`TokenPair.sol`, `ITokenPair.sol`)
+- ✅ Foundry test suite with ERC20 mocks
+- 🚧 Planned: `AMMRouter.sol``
 
-- **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
-- **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
-- **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
-- **Chisel**: Fast, utilitarian, and verbose solidity REPL.
 
-## Documentation
+### Prerequisites
+- [Foundry](https://book.getfoundry.sh/getting-started/installation)
+- Node.js (only needed for tooling in `package.json`; contracts/tests run via Foundry)
 
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
+### Install & build
+```bash
+forge install
+forge build
 ```
 
 ### Test
-
-```shell
-$ forge test
+```bash
+forge test
 ```
 
 ### Format
-
-```shell
-$ forge fmt
+```bash
+forge fmt
 ```
 
-### Gas Snapshots
-
-```shell
-$ forge snapshot
+### Gas snapshots
+```bash
+forge snapshot
 ```
 
-### Anvil
 
-```shell
-$ anvil
-```
 
-### Deploy
+### Roadmap (near term)
+- Add `AMMRouter.sol` and integration tests.
+- Add `PairFactory.sol` and integration tests.
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```

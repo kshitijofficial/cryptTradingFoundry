@@ -1,10 +1,11 @@
-// SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.13;
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.33;
 
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
-import "@openzeppelin/contracts/utils/math/Math.sol";
-import "../interfaces/ITokenPair.sol";
+import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import {ReentrancyGuard} from "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
+import {Math} from "@openzeppelin/contracts/utils/math/Math.sol";
+import {ITokenPair} from "../interfaces/ITokenPair.sol";
+import {IERC20} from "../interfaces/IERC20.sol";
 
 contract TokenPair is ERC20, ReentrancyGuard, ITokenPair {
     address public factory;
@@ -60,7 +61,7 @@ contract TokenPair is ERC20, ReentrancyGuard, ITokenPair {
         } else {
             liquidity = Math.min((amountA * _totalSupply) / _reserveA, (amountB * _totalSupply) / _reserveB);
         }
-        require(liquidity > 0, "Insuffcient liquidity");
+        require(liquidity > 0, "INSUFFICIENT_LIQUIDITY");
         _mint(to, liquidity);
         _setReserves(balanceA, balanceB);
         emit Mint(msg.sender, amountA, amountB);
