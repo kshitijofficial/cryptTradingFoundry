@@ -1,11 +1,14 @@
 ## Crypto Trading Foundry
 
-Experimental AMM components built with Foundry. Current focus is a minimal token pair contract with tests; upcoming work includes an `AMMRouter.sol` `PairFactory.sol`,and additional pool logic.
+A complete Automated Market Maker (AMM) implementation built with Foundry, featuring token pair contracts, pair factory, and routing logic with comprehensive test coverage.
 
 ### Project status
 - ✅ Token pair interface and implementation (`TokenPair.sol`, `ITokenPair.sol`)
-- ✅ Foundry test suite with ERC20 mocks
-- 🚧 Planned: `AMMRouter.sol``
+- ✅ Pair factory contract (`PairFactory.sol`, `IPairFactory.sol`)
+- ✅ AMM router contract (`AMMRouter.sol`, `IAMMRouter.sol`)
+- ✅ AMM library utilities (`AMMLibrary.sol`)
+- ✅ Comprehensive Foundry test suite with ERC20 mocks
+- ✅ Full integration tests for all components
 
 
 ### Prerequisites
@@ -35,7 +38,7 @@ forge snapshot
 
 
 
-### Roadmap (near term)
-- Add `AMMRouter.sol` and integration tests.
-- Add `PairFactory.sol` and integration tests.
+### Roadmap
+- ✅ Completed: Full AMM implementation with routing, factory, and pair contracts
+- Future enhancements: Multi-hop swaps, liquidity mining, governance features
 
